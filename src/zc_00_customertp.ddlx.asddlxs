@@ -1,0 +1,52 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: {
+  typeName: 'Customer',
+  typeNamePlural: 'Customers',
+  title.value: 'ID',
+  description.value: 'Name'
+}
+annotate view ZC_00_CustomerTP with
+{
+  // Facets
+  @UI.facet: [
+    { position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Customer Data' },
+    { position: 20, type: #LINEITEM_REFERENCE, label: 'Bookings', targetElement: '_Bookings' }]
+
+  // Fields
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  ID;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  Name;
+
+  //  Form;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  Street;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  Postcode;
+
+  @UI: {
+    lineItem: [{ position: 50 }],
+    selectionField: [{ position: 10 }],
+    identification: [{ position: 50 }]
+  }
+  City;
+
+  @UI.selectionField: [{ position: 20 }]
+  @UI.identification: [{ position: 60 }]
+  Country;
+
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 70 }]
+  Discount;
+
+  //  _Bookings;
+
+}
